@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文唱ドキュメントAI  Setup</title>
+    <title>文唱ドキュメントAI  初期設定</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/setup.css">
@@ -26,8 +26,8 @@
                             <i class="fas fa-file-alt text-white text-xl"></i>
                         </div>
                         <div>
-                            <h1 class="text-2xl font-bold">Paperless-AI <small><%= config.PAPERLESS_AI_VERSION %></small></h1>
-                            <p class="text-sm text-secondary">Configuration Setup</p>
+                            <h1 class="text-2xl font-bold">文唱ドキュメントAI <small><%= config.PAPERLESS_AI_VERSION %></small></h1>
+                            <p class="text-sm text-secondary">初期設定</p>
                         </div>
                     </div>
                 </div>
@@ -43,11 +43,11 @@
                         <section>
                             <h2 class="section-title">
                                 <i class="fas fa-user"></i>
-                                User Settings
+                                ログイン設定
                             </h2>
                             <div class="space-y-6">
                                 <div class="form-group">
-                                    <label for="username">Username</label>
+                                    <label for="username">ユーザー名</label>
                                     <input type="text" 
                                            id="username" 
                                            name="username"
@@ -56,7 +56,7 @@
                                 </div>
                         
                                 <div class="form-group">
-                                    <label for="password">Password</label>
+                                    <label for="password">パスワード</label>
                                     <div class="password-input">
                                         <input type="password" 
                                                id="password" 
@@ -71,7 +71,7 @@
                                 </div>
                         
                                 <div class="form-group">
-                                    <label for="confirmPassword">Confirm Password</label>
+                                    <label for="confirmPassword">パスワード（確認用）</label>
                                     <div class="password-input">
                                         <input type="password" 
                                                id="confirmPassword" 
@@ -90,12 +90,12 @@
                         <section>
                             <h2 class="section-title">
                                 <i class="fas fa-link"></i>
-                                Connection Settings
+                                サイト連携設定
                             </h2>
                             <div class="space-y-6">
                                 <div class="form-group">
                                     <label for="paperlessUrl" class="flex items-center gap-2">
-                                        Paperless-ngx API URL
+                                        デジタル文唱管理 API URL
                                         <button type="button" 
                                                 class="help-btn text-gray-400 hover:text-gray-600 focus:outline-none"
                                                 id="urlHelp">
@@ -112,7 +112,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="paperlessToken">API Token</label>
+                                    <label for="paperlessToken">APIトークン</label>
                                     <div class="password-input">
                                         <input type="password" 
                                                id="paperlessToken" 
@@ -128,7 +128,7 @@
 
                                 <div class="form-group">
                                     <label for="paperlessUsername" class="flex items-center gap-2">
-                                        Paperless-ngx Username
+                                        デジタル文唱管理ユーザネーム
                                     </label>
                                     <input type="text" 
                                            id="paperlessUsername" 
@@ -145,11 +145,11 @@
                         <section>
                             <h2 class="section-title">
                                 <i class="fas fa-robot"></i>
-                                AI Configuration
+                                AIモデル設定
                             </h2>
                             <div class="space-y-6">
                                 <div class="form-group">
-                                    <label for="aiProvider">AI Provider</label>
+                                    <label for="aiProvider">AIモデル</label>
                                     <select id="aiProvider" 
                                             name="aiProvider"
                                             class="modern-input">
@@ -168,7 +168,7 @@
                                 <!-- OpenAI Settings -->
                                 <div id="openaiSettings" class="provider-settings">
                                     <div class="form-group">
-                                        <label for="openaiKey">OpenAI API Key</label>
+                                        <label for="openaiKey">OpenAI APIトークン</label>
                                         <div class="password-input">
                                             <input type="password" 
                                                    id="openaiKey" 
@@ -182,7 +182,7 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label for="openaiModel">OpenAI Model</label>
+                                        <label for="openaiModel">OpenAI モデル</label>
                                         <select id="openaiModel" 
                                                 name="openaiModel"
                                                 class="modern-input">
@@ -205,7 +205,7 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label for="ollamaModel">Ollama Model</label>
+                                        <label for="ollamaModel">Ollama モデル</label>
                                         <input type="text" 
                                                id="ollamaModel" 
                                                name="ollamaModel"
@@ -217,7 +217,7 @@
                                 <!-- Custom Provider Settings -->
                                 <div id="customSettings" class="provider-settings">
                                     <div class="form-group">
-                                        <label for="customBaseUrl">Base URL</label>
+                                        <label for="customBaseUrl">ベースURL</label>
                                         <input type="text" 
                                                id="customBaseUrl" 
                                                name="customBaseUrl"
@@ -227,7 +227,7 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label for="customApiKey">API Key</label>
+                                        <label for="customApiKey">APIキー</label>
                                         <div class="password-input">
                                             <input type="password" 
                                                    id="customApiKey" 
@@ -241,7 +241,7 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label for="customModel">Model</label>
+                                        <label for="customModel">モデル</label>
                                         <input type="text" 
                                                id="customModel" 
                                                name="customModel"
@@ -257,53 +257,53 @@
                         <section>
                             <h2 class="section-title">
                                 <i class="fas fa-cog"></i>
-                                Advanced Settings
+                                高度な設定
                             </h2>
                             <div class="space-y-6">
                                 <div class="form-group">
-                                    <label for="useExistingData">Use existing Correspondents and Tags?</label>
+                                    <label for="useExistingData">既存の対応者とタグを使用するか?</label>
                                     <select id="useExistingData" 
                                             name="useExistingData" 
                                             class="modern-input">
-                                        <option value="no" <%= config.USE_EXISTING_DATA === 'no' ? 'selected' : '' %>>No</option>
-                                        <option value="yes" <%= config.USE_EXISTING_DATA === 'yes' ? 'selected' : '' %>>Yes</option>
+                                        <option value="no" <%= config.USE_EXISTING_DATA === 'no' ? 'selected' : '' %>>いいえ</option>
+                                        <option value="yes" <%= config.USE_EXISTING_DATA === 'yes' ? 'selected' : '' %>>はい</option>
                                     </select>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="scanInterval">Scan Interval (Cron Format)</label>
+                                    <label for="scanInterval">スキャン間隔 (Cron形式)</label>
                                     <input type="text" 
                                            id="scanInterval" 
                                            name="scanInterval"
                                            value="<%= config.SCAN_INTERVAL %>"
                                            class="modern-input"
                                            required>
-                                    <p class="help-text">Default: every 30 minutes</p>
+                                    <p class="help-text">Default: 30 分間隔</p>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="showTags">Process only specific pre tagged documents?</label>
+                                    <label for="showTags">特定のプレタグドキュメントのみ処理するか?</label>
                                     <select id="showTags" 
                                             name="showTags" 
                                             class="modern-input">
-                                        <option value="no" <%= config.PROCESS_PREDEFINED_DOCUMENTS === 'no' ? 'selected' : '' %>>No</option>
-                                        <option value="yes" <%= config.PROCESS_PREDEFINED_DOCUMENTS === 'yes' ? 'selected' : '' %>>Yes</option>
+                                        <option value="no" <%= config.PROCESS_PREDEFINED_DOCUMENTS === 'no' ? 'selected' : '' %>>いいえ</option>
+                                        <option value="yes" <%= config.PROCESS_PREDEFINED_DOCUMENTS === 'yes' ? 'selected' : '' %>>はい</option>
                                     </select>
                                 </div>
 
                                 <!-- Tags Input -->
                                 <div id="tagsInputSection" class="<%= config.PROCESS_PREDEFINED_DOCUMENTS === 'yes' ? '' : 'hidden' %>">
                                     <div class="form-group">
-                                        <label for="tagInput">Tags</label>
+                                        <label for="tagInput">タグ</label>
                                         <div class="tag-input-container">
                                             <input type="text" 
                                                 id="tagInput" 
                                                 class="modern-input"
-                                                placeholder="Enter a tag and press Enter">
+                                                placeholder="タグを入力してEnterを押してください">
                                             <button type="button" 
                                                     class="material-button add-tag-btn">
                                                 <i class="fas fa-plus"></i>
-                                                Add
+                                                追加
                                             </button>
                                         </div>
                                         <div id="tagsContainer" class="tags-container">
@@ -327,37 +327,37 @@
                                     <select id="aiProcessedTag" 
                                             name="aiProcessedTag" 
                                             class="modern-input">
-                                        <option value="no" <%= config.ADD_AI_PROCESSED_TAG === 'no' ? 'selected' : '' %>>No</option>
-                                        <option value="yes" <%= config.ADD_AI_PROCESSED_TAG === 'yes' ? 'selected' : '' %>>Yes</option>
+                                        <option value="no" <%= config.ADD_AI_PROCESSED_TAG === 'no' ? 'selected' : '' %>>いいえ</option>
+                                        <option value="yes" <%= config.ADD_AI_PROCESSED_TAG === 'yes' ? 'selected' : '' %>>はい</option>
                                     </select>
                                 </div>
                                 <div id="aiTagNameSection" class="<%= config.ADD_AI_PROCESSED_TAG === 'yes' ? '' : 'hidden' %>">
                                     <div class="form-group">
-                                        <label for="aiTagName">AI-processed Tag Name</label>
+                                        <label for="aiTagName">AI処理済みのタグ名</label>
                                         <input type="text" 
                                             id="aiTagName" 
                                             name="aiTagName"
                                             value="<%= config.AI_PROCESSED_TAG_NAME || 'ai-processed' %>"
                                             class="modern-input"
                                             placeholder="ai-processed">
-                                        <p class="help-text">This tag will be added to documents after AI processing</p>
+                                        <p class="help-text">このタグはAI処理後に文書に追加されます</p>
                                     </div>
                                 </div>
                                 
                                 <hr/>
                                 <div class="form-group">
-                                    <label for="usePromptTags">Use specific tags in prompt?</label>
+                                    <label for="usePromptTags">Promptタグを使用しますか?</label>
                                     <select id="usePromptTags" 
                                             name="usePromptTags" 
                                             class="modern-input">
-                                        <option value="no" <%= config.USE_PROMPT_TAGS === 'no' ? 'selected' : '' %>>No</option>
-                                        <option value="yes" <%= config.USE_PROMPT_TAGS === 'yes' ? 'selected' : '' %>>Yes</option>
+                                        <option value="no" <%= config.USE_PROMPT_TAGS === 'no' ? 'selected' : '' %>>いいえ</option>
+                                        <option value="yes" <%= config.USE_PROMPT_TAGS === 'yes' ? 'selected' : '' %>>はい</option>
                                     </select>
                                 </div>
 
                                 <div id="promptTagsSection" class="<%= config.USE_PROMPT_TAGS === 'yes' ? '' : 'hidden' %>">
                                     <div class="form-group">
-                                        <label for="promptTagInput">Prompt Tags</label>
+                                        <label for="promptTagInput">タグ</label>
                                         <div class="tag-input-container">
                                             <input type="text" 
                                                 id="promptTagInput" 
@@ -366,7 +366,7 @@
                                             <button type="button" 
                                                     class="material-button add-prompt-tag-btn">
                                                 <i class="fas fa-plus"></i>
-                                                Add
+                                                追加
                                             </button>
                                         </div>
                                         <div id="promptTagsContainer" class="tags-container">
@@ -380,14 +380,14 @@
                                             <% } %>
                                         </div>
                                         <input type="hidden" id="promptTags" name="promptTags" value="<%= Array.isArray(config.PROMPT_TAGS) ? config.PROMPT_TAGS.join(',') : '' %>">
-                                        <p class="help-text">These tags will be exclusively used in the AI prompt</p>
+                                        <p class="help-text">プロンプトにタグを使用する</p>
                                     </div>
                                 </div>
                                 
                                 <hr/>
                                 <!-- System Prompt -->
                                 <div class="form-group">
-                                    <label for="systemPrompt">Prompt Description</label>
+                                    <label for="systemPrompt">プロンプト説明</label>
                                     <div class="prompt-container">
                                         <textarea id="systemPrompt" 
                                                   name="systemPrompt"
@@ -397,7 +397,7 @@
                                         <button id="systemPromptBtn" type="button" 
                                                 class="material-button example-btn">
                                             <i class="fas fa-lightbulb"></i>
-                                            Example
+                                            プロンプト例
                                         </button>
                                     </div>
                                 </div>
@@ -408,7 +408,7 @@
                         <div class="pt-6">
                             <button type="submit" class="material-button submit-btn">
                                 <i class="fas fa-save"></i>
-                                Save Configuration
+                                保存する
                             </button>
                         </div>
                     </form>
