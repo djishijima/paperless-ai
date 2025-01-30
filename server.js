@@ -1,6 +1,8 @@
 const express = require('express');
 const cron = require('node-cron');
+// biome-ignore lint/style/useNodejsImportProtocol: <explanation>
 const path = require('path');
+// biome-ignore lint/style/useNodejsImportProtocol: <explanation>
 const fs = require('fs').promises;
 const config = require('./config/config');
 const paperlessService = require('./services/paperlessService');
@@ -10,22 +12,9 @@ const setupService = require('./services/setupService');
 const setupRoutes = require('./routes/setup');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-const Logger = require('./services/loggerService');
-const { max } = require('date-fns');
+require('date-fns');
 
-const htmlLogger = new Logger({
-  logFile: 'logs.html',
-  format: 'html',
-  timestamp: true,
-  maxFileSize: 1024 * 1024 * 10
-});
 
-const txtLogger = new Logger({
-  logFile: 'logs.txt',
-  format: 'txt',
-  timestamp: true,
-  maxFileSize: 1024 * 1024 * 10
-});
 
 const app = express();
 let runningTask = false;
@@ -145,6 +134,7 @@ async function buildUpdateData(analysis, doc) {
         updateData.correspondent = correspondent.id;
       }
     } catch (error) {
+      // biome-ignore lint/style/noUnusedTemplateLiteral: <explanation>
       console.error(`[ERROR] Error processing correspondent:`, error);
     }
   }
@@ -160,6 +150,7 @@ async function buildUpdateData(analysis, doc) {
         updateData.document_type = documentType.id;
       }
     } catch (error) {
+      // biome-ignore lint/style/noUnusedTemplateLiteral: <explanation>
       console.error(`[ERROR] Error processing document type:`, error);
     }
   }
@@ -291,7 +282,7 @@ app.get('/health', async (req, res) => {
 });
 
 // Error handler
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
 });
@@ -301,7 +292,7 @@ async function startScanning() {
   try {
     const isConfigured = await setupService.isConfigured();
     if (!isConfigured) {
-      console.log('Setup not completed. Visit http://your-ip-or-host.com:3000/setup to complete setup.');
+      console.log('Setup not completed. Visit http://your-ip-or-host.com:3001/setup to complete setup.');
       return;
     }
 
@@ -369,8 +360,8 @@ process.on('SIGINT', () => gracefulShutdown('SIGINT'));
 async function startServer() {
   try {
     await initializeDataDirectory();
-    app.listen(3000, () => {
-      console.log('Server running on port 3000');
+    app.listen(3001, () => {
+      console.log('Server running on port 3001');
       startScanning();
     });
   } catch (error) {
